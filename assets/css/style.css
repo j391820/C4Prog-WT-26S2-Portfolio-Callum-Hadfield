@@ -30,6 +30,20 @@ nav {
 
 }
 
+body {
+  padding-top: 130px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main aside {
+    display: none;
+}
+
 
 
 
