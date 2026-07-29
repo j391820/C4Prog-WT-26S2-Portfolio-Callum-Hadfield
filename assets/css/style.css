@@ -72,7 +72,20 @@ main aside {
 }
 
 
+@media screen and (min-width:600px) {
+    body {
+      /* primary grid */
+      display: grid;
+      grid-template-areas:
+        "header"
+        "menu"
+        "content"
+        "footer";
 
+      grid-template-columns: 1fr;
+      grid-template-rows: 150px 50px minmax(450px, auto) 150px;
+    }
+}
 
 
 
