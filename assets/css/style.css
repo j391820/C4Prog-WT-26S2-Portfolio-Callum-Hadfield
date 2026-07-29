@@ -85,6 +85,26 @@ main aside {
       grid-template-columns: 1fr;
       grid-template-rows: 150px 50px minmax(450px, auto) 150px;
     }
+
+    header {
+        background-color: white;
+        width: 100%;
+
+        /* grid */
+        grid-area: header;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+
+    }
+
+    header ul {
+        display: none;
+    }
 }
 
 
