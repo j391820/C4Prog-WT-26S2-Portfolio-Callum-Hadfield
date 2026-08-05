@@ -59,13 +59,12 @@ main aside {
   justify-content: center;
   border: 2px solid black;
   background-color: white;
+  width: 100%;
 }
 
 #body-footer ul {
     display: flex;
-    width: 100%;
     flex-direction: row;
-    justify-content: center;
 }
 
 #body-footer ul li{
@@ -149,15 +148,12 @@ main aside {
 
     #body-footer {
         grid-area: footer;
-        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    /* #body-footer ul {
-        padding-left: 100px;
-    } */
+
 
 }
 
