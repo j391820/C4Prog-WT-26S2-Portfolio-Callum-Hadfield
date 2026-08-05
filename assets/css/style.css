@@ -9,6 +9,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 header h1 {
@@ -22,7 +23,7 @@ header ul li{
   margin: 6px 0; 
   border-radius: 2px;
   background-color: #333;
-  margin-right: 10px;
+  margin-left: 250px;
 }
 
 nav {
@@ -52,7 +53,7 @@ main aside {
     display: none;
 }
 
-#body-footer {
+.body-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,12 +63,12 @@ main aside {
   width: 100%;
 }
 
-#body-footer ul {
+.body-footer ul {
     display: flex;
     flex-direction: row;
 }
 
-#body-footer ul li{
+.body-footer ul li{
   list-style: none;
   margin: 0 10px 0 10px;
 }
@@ -84,7 +85,7 @@ main aside {
         "footer";
 
       grid-template-columns: 1fr;
-      grid-template-rows: 150px 50px minmax(450px, auto) 150px;
+      grid-template-rows: 60px 1fr minmax(650px, auto) minmax(100px, auto);
     }
 
     header {
@@ -130,31 +131,51 @@ main aside {
         justify-content: space-around;
     }
 
-        main{
-        grid-area: content;
-        
-        /* sub grid */
-        display: grid;
-        grid-template-areas:
-          "article1 article2 aside"
-          "article3 article4 aside";
+    main{
+    grid-area: content;
+    
+    /* sub grid */
+    display: grid;
+    grid-template-areas:
+        "article1 article2 aside"
+        "article3 article4 aside";
 
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        max-width: 960px; 
-        margin: 0 auto; 
-
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 960px; 
+    margin: 50px auto 50px auto;
+    column-gap: 10px;
+    row-gap: 10px;
     }
 
-    #body-footer {
+    .article-1 {
+        grid-area: article1;
+        height: 100%;
+    }
+    
+    .article-2 {
+        grid-area: article2;
+        height: 100%;
+    } 
+    
+    .article-3 {
+        grid-area: article3;
+        height: 100%;
+    }
+    
+    .article-4 {
+        grid-area: article4;
+        height: 100%;
+    } 
+
+
+
+    .body-footer {
         grid-area: footer;
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
-
-
-
 }
 
 
