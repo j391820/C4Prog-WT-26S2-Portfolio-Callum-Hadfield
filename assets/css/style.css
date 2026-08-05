@@ -62,6 +62,7 @@ main article {
 
 .article-4{
     background-color: #e81e63;
+    margin-bottom: 20px;
 }
 
 main aside {
@@ -212,6 +213,7 @@ a:hover {
     .article-4 {
         grid-area: article4;
         height: 100%;
+        margin-bottom: 0px;
     } 
 
 
