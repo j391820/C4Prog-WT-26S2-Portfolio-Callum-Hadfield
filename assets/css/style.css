@@ -46,7 +46,7 @@ main article {
     flex-direction: column;
     border: 2px solid black;
     margin: 6px;
-    padding-left: 2px;
+    padding-left: 10px;
 }
 
 .article-1{
@@ -68,6 +68,23 @@ main article {
 main aside {
     display: none;
 }
+
+figure {
+    position: relative;
+    text-align: center;
+    inline-size: fit-content;
+    margin-inline: auto;
+}
+
+figcaption {
+    background-color: #000000B3;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 
 .body-footer {
   display: flex;
