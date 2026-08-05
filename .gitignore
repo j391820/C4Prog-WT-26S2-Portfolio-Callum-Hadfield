@@ -4,6 +4,7 @@
 .evidence/
 .evidence/*
 .evidence/**
+**/.evidence/**
 
 
 
