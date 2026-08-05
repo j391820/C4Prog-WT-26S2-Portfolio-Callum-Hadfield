@@ -129,6 +129,22 @@ main aside {
         justify-content: space-around;
     }
 
+        main{
+        grid-area: content;
+        
+        /* sub grid */
+        display: grid;
+        grid-template-areas:
+          "article1 article2 aside"
+          "article3 article4 aside";
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 960px; 
+        margin: 0 auto; 
+
+    }
+
 }
 
 
