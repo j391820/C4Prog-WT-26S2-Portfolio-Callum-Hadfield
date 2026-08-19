@@ -22,7 +22,7 @@ header h1 {
   display: block;
   position: fixed;
   top: 10px;
-  left: 390px;
+  right: 10px;
   z-index: 6;
 }
 
@@ -242,6 +242,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-left: 10px;
     }
 
     .body-footer {
