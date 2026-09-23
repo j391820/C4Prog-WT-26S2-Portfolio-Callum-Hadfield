@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/modern-normalize.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/script.js" defer></script>
     <title>Phase 1</title>
 </head>
 <body>
@@ -45,16 +46,19 @@
                     <h3>Pick from the following API's</h3>
                     <input type="checkbox" id="quote" name="quote" value="quote">
                     <label for="quote">Quotes</label>
-                    <input type="checkbox" id="bsb" name="bsb" value="bsb">
-                    <label for="bsb">Bsb</label>
+                    <input type="checkbox" id="hobby" name="hobby" value="hobby">
+                    <label for="hobby">Hobby</label>
                 </fieldset>
                 <fieldset>
-                    <input type="text" id="parameter" name="parameter" placeholder="">
-                    <button type="button" class="submit-button">Get Response</button>
+                    <label for="category">Choose a category:</label>
+                    <select id="category-dropdown" name="category">
+                        <option value="">Select a category</option>
+                    </select>
+                    <button type="button" id="getResponse">Get Response</button>
                 </fieldset>
                 <fieldset>
                     <h3>Hope you like the results!</h3>
-                    <output name="result" for="fact randomword"></output>
+                    <output name="result" for="fact randomword" id="api-result"></output>
                 </fieldset>
             </form>
         </article>
