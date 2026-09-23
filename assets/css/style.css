@@ -78,6 +78,28 @@ main article {
     margin-bottom: 20px;
 }
 
+.article-1 form{
+    margin-left: -10px;
+    background-color: #673ab7;
+} 
+
+.article-1 form fieldset{
+    margin-top: 10px;
+    border-color: #9c27b0;
+    box-shadow: 3px 3px #9c27b0;
+    text-align: center;
+}
+
+
+.submit-button {
+    width: 12em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+}
+
 main aside {
     display: none;
 }

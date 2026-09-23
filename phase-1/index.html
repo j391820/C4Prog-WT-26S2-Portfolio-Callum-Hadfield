@@ -41,15 +41,21 @@
             </footer>
             <h2>Ninja API APP</h2>
             <form>
-                <h3>Pick from the following API's</h3>
-                <input type="checkbox" id="fact" name="fact" value="fact">
-                <label for="fact">Fact</label>
-                <input type="checkbox" id="randomword" name="randomword" value="randomword">
-                <label for="randomword"> Random Word</label>
-                <input type="text" id="parameter" name="parameter" placeholder="">
-                <input type="button" value="Get Response">
-                <h3>Hope you like the results!</h3>
-                <output name="result" for="fact randomword"></output>
+                <fieldset>
+                    <h3>Pick from the following API's</h3>
+                    <input type="checkbox" id="fact" name="fact" value="fact">
+                    <label for="fact" class="apiselector">Fact</label>
+                    <input type="checkbox" id="randomword" name="randomword" value="randomword">
+                    <label for="randomword" class="apiselector"> Random Word</label>
+                </fieldset>
+                <fieldset>
+                    <input type="text" id="parameter" name="parameter" placeholder="">
+                    <button type="button" class="submit-button">Get Response</button>
+                </fieldset>
+                <fieldset>
+                    <h3>Hope you like the results!</h3>
+                    <output name="result" for="fact randomword"></output>
+                </fieldset>
             </form>
         </article>
         <article class="article-2">
