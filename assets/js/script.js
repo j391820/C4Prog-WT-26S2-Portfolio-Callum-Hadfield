@@ -6,14 +6,14 @@ const checkbox2 = document.getElementById('hobby');
 
 // target drop down
 const dropdown = document.getElementById("category-dropdown");
-// Default empty dropdown
+// Default empty dropdown (page first load)
 dropdown.innerHTML = '<option value="">Select a category</option>';
 
 // categories
 const quoteCategories = ["wisdom", "philosophy", "life", "truth", "inspirational", "relationships", "love", "faith", "humor", "success", "courage", "happiness", "art", "writing", "fear", "nature", "time", "freedom", "death", "leadership"];
 const hobbyCategories = ["general", "sports_and_outdoors", "education", "collection", "competition", "observation"];
 
-// default to no api selected
+// default to no api selected (page first load)
 let selectedValue = "no api";
 
 
@@ -23,18 +23,19 @@ checkbox1.addEventListener('change', () => {
     if (checkbox1.checked) {
     // toggle other checkbox
     checkbox2.checked = false;
-    // reset dropdown if click other checkbox
+    // clear dropdown list if click other checkbox, otherwise it adds to existing list
     dropdown.innerHTML = '<option value="">Select a category</option>';    
     quoteCategories.forEach(category => {
         let categoryOption = document.createElement("option");
         categoryOption.text = category;
         categoryOption.value = category;
         dropdown.add(categoryOption);
+    // clear previous selected value if click other checkbox       
     selectedValue = undefined;    
     });
     }
     else {
-        // reset dropdown if uncheck checkbox        
+        // reset dropdown, selected value if uncheck same checkbox      
         selectedValue = "no api";
         dropdown.innerHTML = '<option value="">Select a category</option>';
     }
@@ -44,18 +45,19 @@ checkbox2.addEventListener('change', () => {
     if (checkbox2.checked) {
     // toggle other checkbox
     checkbox1.checked = false;
-    // reset dropdown if click other checkbox
+    // clear dropdown list if click other checkbox, otherwise it adds to existing list
     dropdown.innerHTML = '<option value="">Select a category</option>';     
     hobbyCategories.forEach(category => {
         let categoryOption = document.createElement("option");
         categoryOption.text = category;
         categoryOption.value = category;
         dropdown.add(categoryOption);
+    // clear previous selected value if click other checkbox  
     selectedValue = undefined;
     });
     }
     else {
-        // reset dropdown if uncheck checkbox
+        // reset dropdown, selected value if uncheck same checkbox
         selectedValue = "no api";
         dropdown.innerHTML = '<option value="">Select a category</option>';
     }
