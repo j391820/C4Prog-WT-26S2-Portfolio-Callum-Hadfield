@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // target check boxes
 const checkbox1 = document.getElementById('quote');
 const checkbox2 = document.getElementById('hobby');
@@ -13,9 +15,12 @@ const hobbyCategories = ["general", "sports_and_outdoors", "education", "collect
 let selectedValue;
 
 
+
 // populate categories per api selected
 checkbox1.addEventListener('change', () => {
     if (checkbox1.checked) {
+    // toggle checkbox
+    checkbox2.checked = false;
     quoteCategories.forEach(category => {
         let categoryOption = document.createElement("option");
         categoryOption.text = category;
@@ -32,6 +37,8 @@ checkbox1.addEventListener('change', () => {
 
 checkbox2.addEventListener('click', () => {
     if (checkbox2.checked) {
+    // toggle checkbox
+    checkbox1.checked = false;
     hobbyCategories.forEach(category => {
         let categoryOption = document.createElement("option");
         categoryOption.text = category;
@@ -78,7 +85,7 @@ async function getHobby(category) {
         }catch(error) {
             console.error('Error fetching hobby:', error);
             result.textContent = 'Failed to fetch hobby.';
-            };
+            }
 }
 
 // Quotes
@@ -102,7 +109,7 @@ async function getQuote(category) {
         }catch(error) {
             console.error('Error fetching hobby:', error);
             result.textContent = 'Failed to fetch hobby.';
-            };
+            }
 }
 
 
@@ -117,7 +124,7 @@ button.addEventListener('click', () => {
         getHobby(selectedValue);
     }
     
-})
+});
 
 
 
