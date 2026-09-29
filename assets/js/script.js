@@ -6,21 +6,25 @@ const checkbox2 = document.getElementById('hobby');
 
 // target drop down
 const dropdown = document.getElementById("category-dropdown");
+// Default empty dropdown
+dropdown.innerHTML = '<option value="">Select a category</option>';
 
 // categories
 const quoteCategories = ["wisdom", "philosophy", "life", "truth", "inspirational", "relationships", "love", "faith", "humor", "success", "courage", "happiness", "art", "writing", "fear", "nature", "time", "freedom", "death", "leadership"];
 const hobbyCategories = ["general", "sports_and_outdoors", "education", "collection", "competition", "observation"];
 
-// selected category
-let selectedValue;
+// default to no api selected
+let selectedValue = "no api";
 
 
 
 // populate categories per api selected
 checkbox1.addEventListener('change', () => {
     if (checkbox1.checked) {
-    // toggle checkbox
+    // toggle other checkbox
     checkbox2.checked = false;
+    // reset dropdown if click other checkbox
+    dropdown.innerHTML = '<option value="">Select a category</option>';    
     quoteCategories.forEach(category => {
         let categoryOption = document.createElement("option");
         categoryOption.text = category;
@@ -30,15 +34,18 @@ checkbox1.addEventListener('change', () => {
     });
     }
     else {
-        dropdown.innerHTML = '<option value="">Select a category</option>';
+        // reset dropdown if uncheck checkbox        
         selectedValue = "no api";
+        dropdown.innerHTML = '<option value="">Select a category</option>';
     }
 });
 
-checkbox2.addEventListener('click', () => {
+checkbox2.addEventListener('change', () => {
     if (checkbox2.checked) {
-    // toggle checkbox
+    // toggle other checkbox
     checkbox1.checked = false;
+    // reset dropdown if click other checkbox
+    dropdown.innerHTML = '<option value="">Select a category</option>';     
     hobbyCategories.forEach(category => {
         let categoryOption = document.createElement("option");
         categoryOption.text = category;
@@ -48,9 +55,9 @@ checkbox2.addEventListener('click', () => {
     });
     }
     else {
-        dropdown.innerHTML = '<option value="">Select a category</option>';
+        // reset dropdown if uncheck checkbox
         selectedValue = "no api";
-
+        dropdown.innerHTML = '<option value="">Select a category</option>';
     }
 });
 

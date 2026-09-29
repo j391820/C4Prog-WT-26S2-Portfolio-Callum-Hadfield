@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/modern-normalize.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Phase 1</title>
+    <!-- <script src="../assets/js/script.js" defer></script> -->
+    <title>Phase 2</title>
 </head>
 <body>
     <header>
         <img src="https://placehold.co/60" alt="Placeholder image">
-        <h1>Phase 1</h1>
+        <h1>Phase 2</h1>
     </header>
     <nav class="mobile-nav">
         <ul>
@@ -39,6 +40,27 @@
             <footer>
                 <p>This content is derived from APC Magazine, November 2007.</p>
             </footer>
+            <h2>Ninja API APP</h2>
+            <form>
+                <fieldset>
+                    <h3>Pick from the following API's</h3>
+                    <input type="checkbox" id="quote" name="quote" value="quote">
+                    <label for="quote">Quotes</label>
+                    <input type="checkbox" id="hobby" name="hobby" value="hobby">
+                    <label for="hobby">Hobby</label>
+                </fieldset>
+                <fieldset>
+                    <label for="category">Choose a category:</label>
+                    <select id="category-dropdown" name="category">
+                        <option value="">Select a category</option>
+                    </select>
+                    <button type="button" id="getResponse">Get Response</button>
+                </fieldset>
+                <fieldset>
+                    <h3>Hope you like the results!</h3>
+                    <p id="api-result">Click the button to get a result!</p>
+                </fieldset>
+            </form>
         </article>
         <article class="article-2">
             <h2>COPY, COPY</h2>
@@ -118,6 +140,6 @@
             <li><a href="#">Instructions</a></li>
         </ul>
     </footer>
-    
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
