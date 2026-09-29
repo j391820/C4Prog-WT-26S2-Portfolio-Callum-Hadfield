@@ -56,6 +56,7 @@ dropdown.addEventListener('change', (event) => {
 
 
 // API call
+// Hobbies
 async function getHobby(category) {
     let result = document.getElementById("api-result");
     result.textContent = 'Loading...'
@@ -63,20 +64,24 @@ async function getHobby(category) {
     headers: { 'X-Api-Key': 'vFZfGUnl0SxsGgUctUUbif7hJHZUHJ7Udo9y29z3' }
     })
     const jsonHobbyData = await response.json();
-    if (selectedValue === undefined){
-        result.textContent = 'Please select a category.'
-    }
-    else if (selectedValue === 'no api'){
-        result.textContent = 'Please select an API.';
-    }
-    else if (jsonHobbyData.hobby){
-        result.textContent = jsonHobbyData.hobby;
-    }
-    else{
-        result.textContent = 'Failed to fetch hobby.';
-    }
+    try {
+
+        if (selectedValue === undefined){
+            result.textContent = 'Please select a category.'
+        }
+        else if (selectedValue === 'no api'){
+            result.textContent = 'Please select an API.';
+        }
+        else if (jsonHobbyData.hobby){
+            result.textContent = jsonHobbyData.hobby;
+        }
+        }catch(error) {
+            console.error('Error fetching hobby:', error);
+            result.textContent = 'Failed to fetch hobby.';
+            };
 }
 
+// Quotes
 async function getQuote(category) {
     let result = document.getElementById("api-result");
     result.textContent = 'Loading...'
@@ -84,18 +89,20 @@ async function getQuote(category) {
     headers: { 'X-Api-Key': 'vFZfGUnl0SxsGgUctUUbif7hJHZUHJ7Udo9y29z3' }
     })
     const jsonQuoteData = await response.json();
-    if (selectedValue === undefined){
-        result.textContent = 'Please select a category'
-    }
-    else if (selectedValue === 'no api'){
-        result.textContent = 'Please select an API.';
-    }    
-    else if (jsonQuoteData.length > 0){
-        result.textContent = jsonQuoteData[0].quote;
-    }
-    else{
-        result.textContent = 'Failed to fetch quote.';
-    }
+    try {
+        if (selectedValue === undefined){
+            result.textContent = 'Please select a category'
+            }
+        else if (selectedValue === 'no api'){
+                result.textContent = 'Please select an API.';
+        }    
+        else if (jsonQuoteData.length > 0){
+                result.textContent = jsonQuoteData[0].quote;
+        }
+        }catch(error) {
+            console.error('Error fetching hobby:', error);
+            result.textContent = 'Failed to fetch hobby.';
+            };
 }
 
 
