@@ -3,11 +3,11 @@ const checkbox1 = document.getElementById('quote');
 const checkbox2 = document.getElementById('hobby');
 
 // target drop down
-const dropdown = document.getElementById("category-dropdown")
+const dropdown = document.getElementById("category-dropdown");
 
 // categories
-const quoteCategories = ["wisdom", "philosophy", "life", "truth", "inspirational", "relationships", "love", "faith", "humor", "success", "courage", "happiness", "art", "writing", "fear", "nature", "time", "freedom", "death", "leadership"]
-const hobbyCategories = ["general", "sports_and_outdoors", "education", "collection", "competition", "observation"]
+const quoteCategories = ["wisdom", "philosophy", "life", "truth", "inspirational", "relationships", "love", "faith", "humor", "success", "courage", "happiness", "art", "writing", "fear", "nature", "time", "freedom", "death", "leadership"];
+const hobbyCategories = ["general", "sports_and_outdoors", "education", "collection", "competition", "observation"];
 
 // selected category
 let selectedValue;
@@ -59,15 +59,15 @@ dropdown.addEventListener('change', (event) => {
 // Hobbies
 async function getHobby(category) {
     let result = document.getElementById("api-result");
-    result.textContent = 'Loading...'
+    result.textContent = 'Loading...';
     const response = await fetch(`https://api.api-ninjas.com/v1/hobbies?category=${category}`, {
     headers: { 'X-Api-Key': 'vFZfGUnl0SxsGgUctUUbif7hJHZUHJ7Udo9y29z3' }
-    })
+    });
     const jsonHobbyData = await response.json();
     try {
 
         if (selectedValue === undefined){
-            result.textContent = 'Please select a category.'
+            result.textContent = 'Please select a category.';
         }
         else if (selectedValue === 'no api'){
             result.textContent = 'Please select an API.';
@@ -84,14 +84,14 @@ async function getHobby(category) {
 // Quotes
 async function getQuote(category) {
     let result = document.getElementById("api-result");
-    result.textContent = 'Loading...'
+    result.textContent = 'Loading...';
     const response = await fetch(`https://api.api-ninjas.com/v2/quotes?categories=${category}`, {
     headers: { 'X-Api-Key': 'vFZfGUnl0SxsGgUctUUbif7hJHZUHJ7Udo9y29z3' }
-    })
+    });
     const jsonQuoteData = await response.json();
     try {
         if (selectedValue === undefined){
-            result.textContent = 'Please select a category'
+            result.textContent = 'Please select a category';
             }
         else if (selectedValue === 'no api'){
                 result.textContent = 'Please select an API.';
@@ -107,7 +107,7 @@ async function getQuote(category) {
 
 
 // button
-const button = document.getElementById("getResponse")
+const button = document.getElementById("getResponse");
 
 button.addEventListener('click', () => {
     if (quoteCategories.includes(selectedValue)){
